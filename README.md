@@ -1,6 +1,6 @@
-# Burn - Three js experiment
+# Lava Lamp - Three js experiment
 
-A little experiment with burn effect for Codevember
+A little experiment with a lava lamp and meta balls effect for Codevember
 
 [CodePen](http://codepen.io/AntoineCharbonnier/pen/GpBJEw)
 

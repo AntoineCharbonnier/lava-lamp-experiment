@@ -1,0 +1,83 @@
+@import "bourbon";
+@import "mixins";
+@import "fonts";
+@import "components";
+
+
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background: black;
+}
+
+.hide{
+	display: none !important;
+}
+
+.desktop{
+	display: block;
+}
+
+.mobile{
+	display: none !important;
+}
+
+.container{
+	position: absolute;
+	display: table;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	opacity: 0;
+	h1,a,h3{
+		font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;		position: relative;
+		font-weight: 300;
+		top: 0px;
+		color: black;
+		text-align: center;
+		font-size: 25px;
+	}
+	a{
+		text-decoration: none;
+		outline: 0;
+	}
+	.switch{
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 10;
+		a{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+
+@include mobile(){
+
+	.desktop{
+		display: none !important;
+	}
+
+	.mobile{
+		display: block !important;
+	}
+
+	.container{
+
+	}
+
+}
+
+
+
+
+

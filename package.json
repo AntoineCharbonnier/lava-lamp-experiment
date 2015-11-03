@@ -1,0 +1,36 @@
+{
+  "name": "ES6",
+  "description": "ES6",
+  "version": "0.0.1",
+  "devDependencies": {
+    "babelify": "^6.0.2",
+    "browser-sync": "~1.7",
+    "browserify": "^10.1.1",
+    "gulp": "^3.8.11",
+    "gulp-notify": "^2.0.1",
+    "gulp-prompt": "^0.1.2",
+    "gulp-ruby-sass": "~1.0.0",
+    "gulp-sourcemaps": "^1.2.8",
+    "gulp-uglify": "^1.2.0",
+    "lodash": "^3.9.1",
+    "node-bourbon": "^1.2.3",
+    "node-neat": "^1.3.0",
+    "require-dir": "^0.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.1"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "glslify": "^2.3.1",
+    "gulp-nodemon": "^2.0.4",
+    "socket.io": "^1.3.7",
+    "three-effectcomposer": "0.0.1",
+    "three-orbit-controls": "^71.0.0"
+  },
+  "browserify": {
+    "transform": [
+      "glslify"
+    ]
+  }
+}

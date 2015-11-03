@@ -1,0 +1,9 @@
+.DS_Store
+.sass-cache
+.tmp
+node_modules
+public/vendors
+public/scripts/main.js
+public/styles/main.css
+
+public/mp3/sound-exp/*

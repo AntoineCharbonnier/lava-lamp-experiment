@@ -1,0 +1,77 @@
+// MIXINS
+@mixin centeredWithSize($width, $height) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: $width;
+  height: $height;
+}
+
+@mixin clearfix() {
+  content: "";
+  visibility: hidden;
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+@mixin hardAcc() {
+  @include transform(translateZ(0));
+  @include backface-visibility(hidden);
+  @include perspective(1000);
+}
+
+$mobile-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 1367px;
+$min-desktop-width: 1024px;
+$small-height: 600px; // 480
+$small-width: 350px; 
+$mq-tablet-portrait: 768px;
+$mq-mobile-landscape: 736px;
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$min-desktop-width}){
+    @content;
+  }
+}
+
+@mixin tablet-portrait-only(){
+  @media only screen and (min-width : #{mq-mobile-landscape} + 1px) and (max-width : #{mq-tablet-portrait}){
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$min-desktop-width + 1}){
+    @content;
+  }
+}
+
+@mixin min-desktop{
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}), (min-width: 1280px) and (max-width: 1281px), (min-width: 1024px) and (max-width: 1025px){
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-height {
+  @media (max-height: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+// iPhone 4 / iPhone 5
+@mixin small-device {
+  @media (max-device-height: #{$small-height}) and (max-device-width:#{$small-width} ) {
+    @content;
+  }
+}
+

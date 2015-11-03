@@ -2,7 +2,7 @@
 
 A little experiment with a lava lamp and meta balls effect for Codevember
 
-[CodePen](http://codepen.io/AntoineCharbonnier/pen/GpBJEw)
+[CodePen](http://codepen.io/AntoineCharbonnier/pen/BoPYNq)
 
 ## INSTALL
 

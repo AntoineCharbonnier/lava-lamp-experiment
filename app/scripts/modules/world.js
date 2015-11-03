@@ -1,6 +1,5 @@
 let glslify = require('glslify');
-import { Keyboard }  from './keyboard';
-// import { Sphere }    from './sphere';
+// import { Keyboard }  from './keyboard';
 
 class World {
 
@@ -124,16 +123,17 @@ class World {
       console.log( item, loaded, total );
     };
 
+    THREE.ImageUtils.crossOrigin = "";
     this.lavaTexture = new THREE.Texture();
 
     this.loaderImage = new THREE.ImageLoader( this.manager );
-    this.loaderImage.load( 'img/carbon-fiber.jpg', function ( image ) {
+    this.loaderImage.load( 'http://antoinecharbonnier.fr/dev/metaballs/img/carbon-fiber.jpg', function ( image ) {
       this.lavaTexture.image       = image;
       this.lavaTexture.needsUpdate = true;
     }.bind(this) );
 
     this.loaderObj = new THREE.OBJLoader( this.manager );
-    this.loaderObj.load( 'obj/lavala.obj', function ( object ) {
+    this.loaderObj.load( 'http://antoinecharbonnier.fr/dev/metaballs/obj/lavala.obj', function ( object ) {
 
       object.traverse( function ( child ) {
         if ( child instanceof THREE.Mesh ) {
@@ -150,7 +150,7 @@ class World {
 
       this.scene.add( this.lavaLamp );
       
-      this.keyboard.addObject( this.lavaLamp.children[0] );
+      // this.keyboard.addObject( this.lavaLamp.children[0] );
 
     }.bind(this), this.onProgressLoad, this.onErrorLoad );
 
@@ -176,8 +176,8 @@ class World {
     this.lavaMaterial.uniforms.texScale.value    = 10
     this.lavaMaterial.uniforms.useSSS.value      = 0
     this.lavaMaterial.uniforms.useScreen.value   = 1
-    this.lavaMaterial.uniforms.textureMap.value  = THREE.ImageUtils.loadTexture( './img/944_large_remake2.jpg' )
-    this.lavaMaterial.uniforms.normalMap.value   = THREE.ImageUtils.loadTexture( './img/ice-snow.jpg' )
+    this.lavaMaterial.uniforms.textureMap.value  = THREE.ImageUtils.loadTexture( 'http://antoinecharbonnier.fr/dev/metaballs/img/944_large_remake2.jpg' )
+    this.lavaMaterial.uniforms.normalMap.value   = THREE.ImageUtils.loadTexture( 'http://antoinecharbonnier.fr/dev/metaballs/img/ice-snow.jpg' )
     this.lavaMaterial.uniforms.color.value.setRGB( 36.0 / 255.0, 70.0 / 255.0, 106.0 / 255.0 )
     this.sphereMaterial.uniforms.color.value.setRGB( 51.0 / 255.0, 50.0 / 255.0, 49.0 / 255.0 )
     this.lavaMaterial.uniforms.textureMap.value.wrapS = this.lavaMaterial.uniforms.textureMap.value.wrapT = THREE.ClampToEdgeWrapping
@@ -234,7 +234,7 @@ class World {
 
   addListeners() {
   	window.addEventListener( 'resize', this.onWindowResize.bind( this ), false );
-  	this.keyboard = new Keyboard();	
+  	// this.keyboard = new Keyboard();	
 
     window.addEventListener( 'mousedown', this.onTouchStart.bind(this) );
     window.addEventListener( 'touchstart', this.onTouchStart.bind(this) );
